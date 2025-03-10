@@ -1,10 +1,22 @@
 extends CharacterBody2D
 
-#Speed of the character
+@export_group("Movement Variables")
+@export var color_aween : Color = "#fff030"
+@export var some_texture : Texture2D
 @export var speed: float = 200.0
+@export var run_multiplier = 1.5
+#var velocity = Vector2.ZERO
 
 func _process(delta: float) -> void:
 	var input_vector = Vector2.ZERO
+
+	match StateMachine.current_state:
+		StateMachine.States.IDLE:
+			StateMachine.idle_state()
+		StateMachine.States.WALKING:
+			StateMachine.walking_state()
+		StateMachine.States.RUNNING:
+			StateMachine.running_state()
 
 	if Input.is_action_pressed("up"):
 		input_vector.y -= 1
