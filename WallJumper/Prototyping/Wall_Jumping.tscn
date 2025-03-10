@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://dcn3rrh7of4ce"]
+
+[ext_resource type="PackedScene" uid="uid://6son5eravani" path="res://Scenes/Player.tscn" id="1_axfcr"]
+[ext_resource type="PackedScene" uid="uid://csv60fyeiustv" path="res://Prototyping/Wall.tscn" id="1_jpjbv"]
+[ext_resource type="PackedScene" uid="uid://b88bdpqqqo75t" path="res://Prototyping/Ground.tscn" id="2_ektvv"]
+[ext_resource type="PackedScene" uid="uid://bu5o6gxcn4lhy" path="res://Prototyping/Platform.tscn" id="4_chdl2"]
+
+[node name="WallJumping" type="Node2D"]
+
+[node name="Wall_Left" parent="." instance=ExtResource("1_jpjbv")]
+position = Vector2(24, 0)
+
+[node name="Ground" parent="." instance=ExtResource("2_ektvv")]
+position = Vector2(180, 616)
+
+[node name="Wall_Right" parent="." instance=ExtResource("1_jpjbv")]
+position = Vector2(180, 0)
+
+[node name="Platform" parent="." instance=ExtResource("4_chdl2")]
+position = Vector2(232, 568)
+
+[node name="Player" parent="." instance=ExtResource("1_axfcr")]
+position = Vector2(103, 515)

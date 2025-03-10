@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://dtvjrdmfal8oh"]
+
+[ext_resource type="Texture2D" uid="uid://c4v4vjv4x3avy" path="res://Art/wall_jumper_godot.png" id="1_qtq72"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_r85dw"]
+a = Vector2(24, -24)
+b = Vector2(-24, -24)
+
+[node name="Platform" type="StaticBody2D"]
+collision_layer = 8
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="."]
+shape = SubResource("SegmentShape2D_r85dw")
+one_way_collision = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_qtq72")
+region_enabled = true
+region_rect = Rect2(240, 0, 48, 48)

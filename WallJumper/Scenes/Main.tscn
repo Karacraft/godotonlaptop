@@ -1,0 +1,31 @@
+[gd_scene load_steps=7 format=3 uid="uid://d2sx6ssstydv6"]
+
+[ext_resource type="Script" uid="uid://uknmmiwyl4um" path="res://Scenes/main.gd" id="1_4m1yl"]
+[ext_resource type="PackedScene" uid="uid://b88bdpqqqo75t" path="res://Prototyping/Ground.tscn" id="2_aoqc6"]
+[ext_resource type="PackedScene" uid="uid://cfasu0lnh1wue" path="res://Scenes/Cage.tscn" id="2_gxai1"]
+[ext_resource type="PackedScene" uid="uid://bu5o6gxcn4lhy" path="res://Prototyping/Platform.tscn" id="3_ixyi2"]
+[ext_resource type="PackedScene" uid="uid://dtvjrdmfal8oh" path="res://Prototyping/PlatformOneWay.tscn" id="4_2rt7t"]
+[ext_resource type="PackedScene" uid="uid://6son5eravani" path="res://Scenes/Player.tscn" id="5_rdc48"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_4m1yl")
+
+[node name="Player" parent="." instance=ExtResource("5_rdc48")]
+position = Vector2(88, 544)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+offset_right = 360.0
+offset_bottom = 640.0
+color = Color(0.643137, 1, 1, 1)
+
+[node name="Ground" parent="." instance=ExtResource("2_aoqc6")]
+position = Vector2(180, 616)
+
+[node name="Platform" parent="." instance=ExtResource("3_ixyi2")]
+position = Vector2(320, 568)
+
+[node name="Platform2" parent="." instance=ExtResource("4_2rt7t")]
+position = Vector2(216, 544)
+
+[node name="Cage" parent="." instance=ExtResource("2_gxai1")]

@@ -1,0 +1,8 @@
+res://Prototyping/Ground.tscn
+res://Prototyping/Platform.tscn
+res://Prototyping/PlatformOneWay.tscn
+res://Prototyping/Wall.tscn
+res://Prototyping/Wall_Jumping.tscn
+res://Scenes/Cage.tscn
+res://Scenes/Main.tscn
+res://Scenes/Player.tscn

@@ -1,0 +1,72 @@
+[gd_scene load_steps=10 format=3 uid="uid://6son5eravani"]
+
+[ext_resource type="Script" uid="uid://dr8sdwwkcfwwc" path="res://Scenes/player.gd" id="1_edbab"]
+[ext_resource type="Texture2D" uid="uid://b8mi30xjfyb17" path="res://Art/fall.png" id="2_b1t6p"]
+[ext_resource type="Texture2D" uid="uid://q62osh338xsl" path="res://Art/idle0.png" id="3_40ak7"]
+[ext_resource type="Texture2D" uid="uid://cfwkhkk8ljpnh" path="res://Art/idle1.png" id="4_13b12"]
+[ext_resource type="Texture2D" uid="uid://bp3n7yqcjcbnt" path="res://Art/walk1.png" id="5_q6gyh"]
+[ext_resource type="Texture2D" uid="uid://ssyttuqd3801" path="res://Art/walk2.png" id="6_abesw"]
+[ext_resource type="Texture2D" uid="uid://m562nr2ffdgv" path="res://Art/wall.png" id="7_7aw6q"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g0kxe"]
+radius = 13.0
+height = 34.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i6ahr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_b1t6p")
+}],
+"loop": true,
+"name": &"fall",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_40ak7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_13b12")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_q6gyh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_abesw")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_7aw6q")
+}],
+"loop": true,
+"name": &"wall",
+"speed": 5.0
+}]
+
+[node name="Player" type="CharacterBody2D"]
+collision_mask = 14
+script = ExtResource("1_edbab")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3)
+shape = SubResource("CapsuleShape2D_g0kxe")
+
+[node name="WallChecker" type="RayCast2D" parent="."]
+rotation = -1.5708
+target_position = Vector2(0, 20)
+collision_mask = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_i6ahr")
+animation = &"idle"
+metadata/_edit_group_ = true

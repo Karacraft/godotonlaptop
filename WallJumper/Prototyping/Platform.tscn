@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://bu5o6gxcn4lhy"]
+
+[ext_resource type="Texture2D" uid="uid://c4v4vjv4x3avy" path="res://Art/wall_jumper_godot.png" id="1_4g4dp"]
+
+[node name="Platform" type="StaticBody2D"]
+collision_layer = 8
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-23, -24, 23, -24, 24, -23, 24, -16, 21, -8, 21, 24, -21, 24, -21, -7, -24, -15, -24, -23)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_4g4dp")
+region_enabled = true
+region_rect = Rect2(240, 0, 48, 48)

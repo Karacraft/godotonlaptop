@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://b88bdpqqqo75t"]
+
+[ext_resource type="Texture2D" uid="uid://c4v4vjv4x3avy" path="res://Art/wall_jumper_godot.png" id="1_ymxj0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hxdtm"]
+size = Vector2(360, 48)
+
+[node name="Ground" type="StaticBody2D"]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_hxdtm")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ymxj0")
+region_enabled = true
+region_rect = Rect2(0, 592, 360, 48)
