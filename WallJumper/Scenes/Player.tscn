@@ -68,5 +68,6 @@ collision_mask = 2
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_i6ahr")
-animation = &"idle"
+animation = &"walk"
+frame_progress = 0.242343
 metadata/_edit_group_ = true

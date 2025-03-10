@@ -1,18 +1,18 @@
 [gd_scene load_steps=3 format=3 uid="uid://cfasu0lnh1wue"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sw4qj"]
-size = Vector2(16, 639.75)
+size = Vector2(16, 639.875)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jwmlp"]
-size = Vector2(403, 21)
+size = Vector2(392, 21.5)
 
 [node name="Cage" type="Node2D"]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-collision_layer = 0
+collision_layer = 2
 
 [node name="LeftWall" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-8, 319.875)
+position = Vector2(-8, 320)
 shape = SubResource("RectangleShape2D_sw4qj")
 
 [node name="RightWall" type="CollisionShape2D" parent="StaticBody2D"]
@@ -20,5 +20,5 @@ position = Vector2(368, 320)
 shape = SubResource("RectangleShape2D_sw4qj")
 
 [node name="DeathFloor" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(181.5, 651)
+position = Vector2(180, 650.75)
 shape = SubResource("RectangleShape2D_jwmlp")
