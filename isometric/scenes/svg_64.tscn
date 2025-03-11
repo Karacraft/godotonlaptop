@@ -1,6 +1,6 @@
-[gd_scene load_steps=7 format=4 uid="uid://b3c4wg868eatr"]
+[gd_scene load_steps=12 format=4 uid="uid://b3c4wg868eatr"]
 
-[ext_resource type="Texture2D" uid="uid://b2vscrry8gdld" path="res://graphics/svg_isometric.svg" id="1_gim26"]
+[ext_resource type="Texture2D" uid="uid://b2vscrry8gdld" path="res://resources/graphics/svg_isometric.svg" id="1_gim26"]
 [ext_resource type="Script" uid="uid://b2luil3emkjh2" path="res://scripts/character_body_2d.gd" id="2_iukmj"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_op8w8"]
@@ -73,8 +73,28 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_38ue8")
 pattern_0 = SubResource("TileMapPattern_op8w8")
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_gim26"]
+atlas = ExtResource("1_gim26")
+region = Rect2(476, 80, 19, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iukmj"]
+atlas = ExtResource("1_gim26")
+region = Rect2(457, 80, 19, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ny7wl"]
+atlas = ExtResource("1_gim26")
+region = Rect2(493, 80, 19, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_78fn3"]
+atlas = ExtResource("1_gim26")
+region = Rect2(440, 80, 19, 48)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_op8w8"]
-size = Vector2(22, 14)
+size = Vector2(16, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lat1u"]
+atlas = ExtResource("1_gim26")
+region = Rect2(458, 80, 19, 48)
 
 [node name="svg_64" type="Node2D"]
 
@@ -98,13 +118,15 @@ tile_set = SubResource("TileSet_57x0l")
 z_index = 1
 position = Vector2(180, 345)
 script = ExtResource("2_iukmj")
-
-[node name="SvgIsometric" type="Sprite2D" parent="CharacterBody2D"]
-texture = ExtResource("1_gim26")
-region_enabled = true
-region_rect = Rect2(448, 64, 64, 64)
+left_image = SubResource("AtlasTexture_gim26")
+right_image = SubResource("AtlasTexture_iukmj")
+up_image = SubResource("AtlasTexture_ny7wl")
+down_image = SubResource("AtlasTexture_78fn3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(0, 24)
+position = Vector2(0, 18)
 shape = SubResource("RectangleShape2D_op8w8")
 metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+texture = SubResource("AtlasTexture_lat1u")

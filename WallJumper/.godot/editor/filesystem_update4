@@ -1,7 +1,2 @@
-res://Scenes/Main.tscn
-res://Scenes/player.gd
-res://Scenes/Cage.tscn
-res://Prototyping/Platform.tscn
-res://Prototyping/Ground.tscn
-res://Prototyping/PlatformOneWay.tscn
 res://Scenes/Player.tscn
+res://Scenes/player.gd
